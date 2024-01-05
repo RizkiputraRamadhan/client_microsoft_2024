@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users\AccountsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::middleware([User::class])->group(function () {
+        Route::get('/accounts', [AccountsController::class, 'index']);
+        Route::put('/accounts/update/{id}', [AccountsController::class, 'update']);
+    });
 });

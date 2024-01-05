@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class UsersAccountsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index accounts users
      */
     public function index()
     {
@@ -19,16 +19,9 @@ class UsersAccountsController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
+     * Store accounts users.
      */
     public function store(Request $request)
     {
@@ -59,16 +52,9 @@ class UsersAccountsController extends Controller
             ->with('success', 'User created successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
+     * Edit accounts users
      */
     public function edit(string $id)
     {
@@ -79,7 +65,7 @@ class UsersAccountsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update accounts users.
      */
     public function update(Request $request, string $id)
     {
@@ -109,7 +95,7 @@ class UsersAccountsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove accounts users.
      */
     public function destroy(string $id)
     {
